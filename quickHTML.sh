@@ -2,8 +2,7 @@
 
 # make sure we have a single argument, which will be the name of the new directory
 if [ -z "$1" ]; then
-  echo "Error: No arguments provided." >&2
-  echo "Provide a new directory name as the first argument."
+  echo "Provide a new directory name as the first argument." >&2
   exit 1
 fi
 
