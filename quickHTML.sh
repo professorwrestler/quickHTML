@@ -6,20 +6,12 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-# make new directory based on first argument
-mkdir "$1"
-# cd into new directory
-cd "$1"
-# make index.html file
-touch index.html
-# make javascript folder
-mkdir js
-# make main.js file inside javascript folder
-touch js/main.js
-# make CSS folder
-mkdir stylesheets
-# put styles.css into CSS folder
-touch stylesheets/style.css
+# make new directory based on first argument along with js and css folders
+mkdir -p "$1"/{js,stylesheets}
+
+# make index.html file, main.js, and styles.css in their respective folders
+touch "$1"/index.html "$1"/js/main.js "$1"/stylesheets/style.css
+
 # put our HTML boilerplate inside the index.html file
 echo "<!DOCTYPE html>
 <html lang="en">
@@ -33,6 +25,4 @@ echo "<!DOCTYPE html>
   <body>
     <script src="js/main.js"></script>
   </body>
-</html>" >> index.html
-
-cd ..
+</html>" >> "$1"/index.html
