@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # make sure we have a single argument, which will be the name of the new directory
-if [ -z "$1" ]; then
+if [[ -z "$1" ]]; then
   echo "Provide a new directory name as the first argument." >&2
   exit 1
 fi
